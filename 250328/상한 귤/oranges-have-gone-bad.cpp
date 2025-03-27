@@ -59,7 +59,6 @@ int main() {
         for (int j = 1; j <= n; j++) {
             if (grid[i][j] == 1) {
                 cout << -2 << endl;
-                return 0;
             }
 
             else {
