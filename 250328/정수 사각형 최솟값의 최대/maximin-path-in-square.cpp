@@ -18,7 +18,7 @@ void Initialize() {
 
     for (int j = 1; j < n; j++)
     // 오른쪽으로 이동하는 값 초기화
-        dp[0][j] = min(dp[0][j + 1] , num[0][j]);
+        dp[0][j] = min(dp[0][j - 1] , num[0][j]);
 }    
 
 
