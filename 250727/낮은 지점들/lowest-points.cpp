@@ -26,7 +26,7 @@ int main() {
 		if (m.find(x) != m.end()) {
 
 			// 큰건 삭제
-			if (m[x] > y) {
+			if (m[x] >= y) {
 				m[x] = y;
 			}
 		}
