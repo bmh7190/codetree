@@ -12,7 +12,7 @@ int main() {
 
 	cin >> n >> m;
 
-	while (n--) {
+	for (int i = 0; i < n; i++) {
 		int num;
 
 		cin >> num;
@@ -20,17 +20,18 @@ int main() {
 		s.insert(num);
 	}
 
+	for (int i = 0; i < m; i++) {
+		int num;
+		cin >> num;
 
-	while (m--) {
-		int ans;
-		cin >> ans;
-
-		if (s.find(ans) != s.end()) {
+		if (s.find(num) != s.end()) {
 			count++;
 		}
 	}
 
-	cout << count << "\n";
+	int ans = n - count + m - count;
+
+	cout << ans << "\n";
 
 
 }
