@@ -1,35 +1,32 @@
 #include <iostream>
 #include <queue>
-
-#define MAX_N 100000
-
+#include <vector>
+#include <functional>
 using namespace std;
 
-int n;
-int arr[MAX_N];
-priority_queue<int> pq;  
-
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
+    int n;
     cin >> n;
-    for(int i = 0; i < n; i++)
-        cin >> arr[i];
 
-    for(int i = 0; i < n; i++) {
-        
-        if(arr[i] != 0)
-            pq.push(-arr[i]);
-        
-        else {
-            if(pq.empty())
-                cout << 0 << endl;
-            else {
-                int min_val = -pq.top();
+    priority_queue<long long, vector<long long>, greater<long long>> pq; // 최소 힙
+
+    for (int i = 0; i < n; ++i) {
+        long long x;
+        cin >> x;
+
+        if (x != 0) {
+            pq.push(x);
+        } else {
+            if (pq.empty()) {
+                cout << 0 << '\n';
+            } else {
+                cout << pq.top() << '\n';
                 pq.pop();
-                cout << min_val << endl;
             }
         }
     }
-
     return 0;
 }
